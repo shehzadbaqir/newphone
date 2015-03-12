@@ -50,12 +50,17 @@
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("key");
         alert(value);
+        window.plugins.imeiplugin.getImei(callback);
         // value is now equal to "value"
         
         //window.localStorage.clear();
         // localStorage is now empty
     }
-            
+          
+
+function callback(imei) {
+    alert("My Android IMEI :" + imei);
+}
         </script>
     </body>
 </html>
