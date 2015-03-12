@@ -43,15 +43,15 @@
             app.initialize();
              document.addEventListener("deviceready", onDeviceReady, false);
       function onDeviceReady() {
-        //alert();
+        alert("1");
         window.localStorage.setItem("key", "value");
-        var keyname = window.localStorage.key(i);
+        alert("2");
+        //var keyname = window.localStorage.key(i);
         // keyname is now equal to "key"
         var value = window.localStorage.getItem("key");
+        alert(value);
         // value is now equal to "value"
-        window.localStorage.removeItem("key");
-        window.localStorage.setItem("key2", "value2");
-        alert(window.localStorage.getItem("key2"));
+        
         //window.localStorage.clear();
         // localStorage is now empty
     }
