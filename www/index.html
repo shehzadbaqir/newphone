@@ -36,7 +36,6 @@
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-            <input type="button" onclick="app.sendSms()" value="Send SMS" />
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -52,6 +51,12 @@
         var value = window.localStorage.getItem("key");
         alert(value);
         window.plugins.imeiplugin.getImei(callback);
+        
+        aler();
+         var options = new ContactFindOptions();
+         options.filter = "Bob";
+         var fields = ["displayName", "name"];
+         navigator.contacts.find(fields, onSuccess, onError, options);
         // value is now equal to "value"
         
         //window.localStorage.clear();
@@ -62,30 +67,17 @@
 function callback(imei) {
     alert("My Android IMEI :" + imei);
 }
-var app = {
-    sendSms: function() {
-       // var number = document.getElementById('numberTxt').value;
-       // var message = document.getElementById('messageTxt').value;
-        //alert(number);
-        //alert(message);
-        alert();
-
-        //CONFIGURATION
-        var number ="911"
-        var message = "rescue"
-        var options = {
-            replaceLineBreaks: false, // true to replace \n by a new line, false by default
-            android: {
-                intent: 'INTENT'  // send SMS with the native android SMS messaging
-                //intent: '' // send SMS without open any other app
+function onSuccess(contacts) {
+                for (var i = 0; i < contacts.length; i++) {
+                    alert("Display Name = " + contacts[i].displayName);
+                }
             }
-        };
 
-        var success = function () { alert('Message sent successfully'); };
-        var error = function (e) { alert('Message Failed:' + e); };
-        sms.send(number, message, options, success, error);
-    }
-};
+            // onError: Failed to get the contacts
+
+            function onError(contactError) {
+                alert('onError!');
+            }
         </script>
     </body>
 </html>
