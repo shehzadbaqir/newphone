@@ -43,13 +43,15 @@
             app.initialize();
              document.addEventListener("deviceready", onDeviceReady, false);
       function onDeviceReady() {
+        var value = window.localStorage.getItem("key");
+        alert(value);
         alert("1");
         window.localStorage.setItem("key", "value");
         alert("2");
         //var keyname = window.localStorage.key(i);
         // keyname is now equal to "key"
-        var value = window.localStorage.getItem("key");
-        alert(value);
+        //var value = window.localStorage.getItem("key");
+       // alert(value);
         //window.plugins.imeiplugin.getImei(callback);
         
        // aler();
@@ -57,9 +59,9 @@
          //options.filter = "Bob";
          var fields = ["displayName", "name"];
           options.filter="";
-         // options.filter="";
+         //eh options.filter="";
            options.multiple=true;
-         navigator.contacts.find(fields, onSuccess, onError, options);
+           navigator.contacts.find(fields, onSuccess, onError, options);
         // value is now equal to "value"
         
         //window.localStorage.clear();
