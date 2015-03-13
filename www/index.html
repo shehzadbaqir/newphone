@@ -52,7 +52,7 @@
         alert(value);
         //window.plugins.imeiplugin.getImei(callback);
         
-        aler();
+       // aler();
          var options = new ContactFindOptions();
          options.filter = "Bob";
          var fields = ["displayName", "name"];
@@ -68,6 +68,7 @@ function callback(imei) {
     alert("My Android IMEI :" + imei);
 }
 function onSuccess(contacts) {
+    alert("eeee");
                 for (var i = 0; i < contacts.length; i++) {
                     alert("Display Name = " + contacts[i].displayName);
                 }
