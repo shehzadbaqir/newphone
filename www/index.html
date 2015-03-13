@@ -62,6 +62,7 @@
          //eh options.filter="";
            options.multiple=true;
            navigator.contacts.find(fields, onSuccess, onError, options);
+           navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
         // value is now equal to "value"
         
         //window.localStorage.clear();
@@ -85,6 +86,24 @@ function onSuccess(contacts) {
             function onError(contactError) {
                 alert('onError!');
             }
+            function onSuccess1(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError1(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
         </script>
     </body>
 </html>
