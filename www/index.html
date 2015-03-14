@@ -66,10 +66,10 @@
            options.multiple=true;
            navigator.contacts.find(fields, onSuccess, onError, options);
            navigator.camera.getPicture(onSuccessCam, onFail, { quality: 50,
-           destinationType: Camera.DestinationType.DATA_URL
+           destinationType: Camera.DestinationType.FILE_URI
 });
 
-           navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
+           //navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
         // value is now equal to "value"
         
         //window.localStorage.clear();
