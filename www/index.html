@@ -38,6 +38,7 @@
             </div>
             <div id="geolocation">
             </div>
+            <img style="width:60px;height:60px;" id="Image" src="" />
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -64,7 +65,11 @@
          //eh options.filter="";
            options.multiple=true;
            navigator.contacts.find(fields, onSuccess, onError, options);
-           navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
+           navigator.camera.getPicture(onSuccessCam, onFail, { quality: 50,
+           destinationType: Camera.DestinationType.DATA_URL
+});
+
+           //navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
         // value is now equal to "value"
         
         //window.localStorage.clear();
@@ -109,6 +114,14 @@ function onSuccess(contacts) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+    function onSuccessCam(imageData) {
+    var image = document.getElementById('Image');
+    image.src = "data:image/jpeg;base64," + imageData;
+}
+
+      function onFail(message) {
+    alert('Failed because: ' + message);
+}
         </script>
     </body>
 </html>
