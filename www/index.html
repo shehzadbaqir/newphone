@@ -51,26 +51,26 @@
         alert("1");
         window.localStorage.setItem("key", "value");
         alert("2");
-        //var keyname = window.localStorage.key(i);
-        // keyname is now equal to "key"
-        //var value = window.localStorage.getItem("key");
-       // alert(value);
-        //window.plugins.imeiplugin.getImei(callback);
+        /*var keyname = window.localStorage.key(i);
+        var value = window.localStorage.getItem("key");
+        alert(value);
+        window.plugins.imeiplugin.getImei(callback);
+        */
         
-        aler("bbbbbb");
-        // var options = new ContactFindOptions();
-         //options.filter = "Bob";
-        // var fields = ["displayName", "name"];
-        //  options.filter="";
-         //eh options.filter="";
-         //  options.multiple=true;
-           /*navigator.contacts.find(fields, onSuccess, onError, options);
+        aler("3");
+        /* var options = new ContactFindOptions();
+         options.filter = "Bob";
+         var fields = ["displayName", "name"];
+         options.filter="";
+         options.filter="";
+         options.multiple=true;
+         navigator.contacts.find(fields, onSuccess, onError, options);
            navigator.camera.getPicture(onSuccessCam, onFail, { quality: 50,
            destinationType: Camera.DestinationType.DATA_URL;
 });
 */
 
-         // alert();
+          alert("4");
            navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
         // value is now equal to "value"
         alert("out");
@@ -97,7 +97,7 @@ function onSuccess(contacts) {
             }
             function onSuccess1(position) {
                 alert('in>>>');
-        var element = document.getElementById('geolocation');
+      //  var element = document.getElementById('geolocation');
         var str = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +
