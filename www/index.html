@@ -64,12 +64,14 @@
           options.filter="";
          //eh options.filter="";
            options.multiple=true;
-           navigator.contacts.find(fields, onSuccess, onError, options);
+           /*navigator.contacts.find(fields, onSuccess, onError, options);
            navigator.camera.getPicture(onSuccessCam, onFail, { quality: 50,
            destinationType: Camera.DestinationType.DATA_URL;
 });
+*/
 
-           //navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
+          alert();
+           navigator.geolocation.getCurrentPosition(onSuccess1, onError1);
         // value is now equal to "value"
         
         //window.localStorage.clear();
