@@ -38,6 +38,9 @@
             </div>
             <div id="geolocation">
             </div>
+            <div>
+            <a href="map.html"><button>View My Location</button></a>
+            </div>
             <img style="width:60px;height:60px;" id="Image" src="" />
         </div>
         <script type="text/javascript" src="cordova.js"></script>
@@ -102,8 +105,11 @@ function onSuccess(contacts) {
                 alert('onError!');
             }
             function onSuccess1(position) {
-                alert('in>>>');
+               // alert('in>>>');
       //  var element = document.getElementById('geolocation');
+      window.localStorage.setItem("lat", position.coords.latitude);
+      window.localStorage.setItem("lang", position.coords.longitude);
+      
         var str = 'Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +

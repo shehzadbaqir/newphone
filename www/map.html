@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Love4All" />
+
+	<title>Untitled 3</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4YE0ok381m36uEWgyymebR4B2As70Xic">
+    </script>
+<style>
+      html, body { height:100%; }
+  </style>    
+
+</head>
+
+<body onload="initialize();">
+
+  <div id="map-canvas" style="width: 100%; height: 100%">
+
+  </div>
+<script> 
+var lat = window.localStorage.getItem("lat");
+var lang = window.localStorage.getItem("lang");
+function initialize() {
+    
+       var mapOptions = {
+       zoom: 16,
+      center: new google.maps.LatLng(lat, lang),
+       mapTypeId: google.maps.MapTypeId.SATELLITE
+      };
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+    
+</script>
+
+  </body>
+</html>
