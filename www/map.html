@@ -28,9 +28,15 @@ function initialize() {
       center: new google.maps.LatLng(lat, lang),
        mapTypeId: google.maps.MapTypeId.SATELLITE
       };
+      
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+  var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    title: 'My Location'
+  })
 }
 
     
