@@ -43,6 +43,9 @@
             </div>
             <img style="width:60px;height:60px;" id="Image" src="" />
             <button onclick="getImage();">Upload file</button>
+             <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+             <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+            <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -152,6 +155,7 @@ function onSuccess(contacts) {
  
         }
         function uploadPhoto(imageURI) {
+            alert("in>>>");
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -178,6 +182,26 @@ function onSuccess(contacts) {
         function fail(error) {
             alert("An error has occurred: Code = " = error.code);
         }
+        function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
         
 
         </script>
